@@ -15,6 +15,7 @@ import (
 	"github.com/h2non/gock"
 	"github.com/jackc/pgconn"
 	"github.com/jackc/pgerrcode"
+	"github.com/jackc/pgx/v4"
 	"github.com/spf13/afero"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -24,7 +25,6 @@ import (
 	"github.com/supabase/cli/internal/testing/helper"
 	"github.com/supabase/cli/internal/utils"
 	"github.com/supabase/cli/internal/utils/flags"
-	"github.com/supabase/cli/pkg/config"
 	"github.com/supabase/cli/pkg/migration"
 	"github.com/supabase/cli/pkg/pgtest"
 )
@@ -64,7 +64,7 @@ func TestRun(t *testing.T) {
 		require.NoError(t, apitest.MockDockerLogs(utils.Docker, "test-shadow-storage", ""))
 		apitest.MockDockerStart(utils.Docker, utils.GetRegistryImageUrl(utils.Config.Auth.Image), "test-shadow-auth")
 		require.NoError(t, apitest.MockDockerLogs(utils.Docker, "test-shadow-auth", ""))
-		apitest.MockDockerStart(utils.Docker, utils.GetRegistryImageUrl(config.Images.Migra), "test-migra")
+		apitest.MockDockerStart(utils.Docker, utils.GetRegistryImageUrl(utils.Config.EdgeRuntime.Image), "test-migra")
 		diff := "create table test();"
 		require.NoError(t, apitest.MockDockerLogs(utils.Docker, "test-migra", diff))
 		// Setup mock postgres
@@ -73,7 +73,17 @@ func TestRun(t *testing.T) {
 			Reply("CREATE DATABASE")
 		defer conn.Close(t)
 		// Run test
-		err := Run(context.Background(), []string{"public"}, "file", dbConfig, DiffSchemaMigra, fsys, conn.Intercept)
+		err := Run(context.Background(), []string{"public"}, "file", dbConfig, DiffSchemaMigra, fsys, func(cc *pgx.ConnConfig) {
+			if cc.Host == dbConfig.Host {
+				// Fake a SSL error when connecting to target database
+				cc.LookupFunc = func(ctx context.Context, host string) (addrs []string, err error) {
+					return nil, errors.New("server refused TLS connection")
+				}
+			} else {
+				// Hijack connection to shadow database
+				conn.Intercept(cc)
+			}
+		})
 		// Check error
 		assert.NoError(t, err)
 		assert.Empty(t, apitest.ListUnmatchedRequests())
@@ -285,7 +295,7 @@ create schema public`)
 		gock.New(utils.Docker.DaemonHost()).
 			Delete("/v" + utils.Docker.ClientVersion() + "/containers/test-shadow-db").
 			Reply(http.StatusOK)
-		apitest.MockDockerStart(utils.Docker, utils.GetRegistryImageUrl(config.Images.Migra), "test-migra")
+		apitest.MockDockerStart(utils.Docker, utils.GetRegistryImageUrl(utils.Config.EdgeRuntime.Image), "test-migra")
 		gock.New(utils.Docker.DaemonHost()).
 			Get("/v" + utils.Docker.ClientVersion() + "/containers/test-migra/logs").
 			ReplyError(errors.New("network error"))
@@ -307,7 +317,17 @@ create schema public`)
 			Query(migration.INSERT_MIGRATION_VERSION, "0", "test", []string{sql}).
 			Reply("INSERT 0 1")
 		// Run test
-		diff, err := DiffDatabase(context.Background(), []string{"public"}, dbConfig, io.Discard, fsys, DiffSchemaMigra, conn.Intercept)
+		diff, err := DiffDatabase(context.Background(), []string{"public"}, dbConfig, io.Discard, fsys, DiffSchemaMigra, func(cc *pgx.ConnConfig) {
+			if cc.Host == dbConfig.Host {
+				// Fake a SSL error when connecting to target database
+				cc.LookupFunc = func(ctx context.Context, host string) (addrs []string, err error) {
+					return nil, errors.New("server refused TLS connection")
+				}
+			} else {
+				// Hijack connection to shadow database
+				conn.Intercept(cc)
+			}
+		})
 		// Check error
 		assert.Empty(t, diff)
 		assert.ErrorContains(t, err, "error diffing schema")

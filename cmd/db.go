@@ -100,7 +100,9 @@ var (
 			differ := diff.DiffSchemaMigra
 			if usePgSchema {
 				differ = diff.DiffPgSchema
-				fmt.Fprintln(os.Stderr, utils.Yellow("WARNING:"), "--use-pg-schema flag is experimental and may not include all entities, such as RLS policies, enums, and grants.")
+				fmt.Fprintln(os.Stderr, utils.Yellow("WARNING:"), "--use-pg-schema flag is experimental and may not include all entities, such as views and grants.")
+			} else if !viper.GetBool("EXPERIMENTAL") {
+				differ = diff.DiffSchemaMigraBash
 			}
 			return diff.Run(cmd.Context(), schema, file, flags.DbConfig, differ, afero.NewOsFs())
 		},

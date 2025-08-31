@@ -7,10 +7,11 @@ import (
 	"strings"
 
 	"github.com/go-errors/errors"
+	"github.com/jackc/pgx/v4"
 	pgschema "github.com/stripe/pg-schema-diff/pkg/diff"
 )
 
-func DiffPgSchema(ctx context.Context, source, target string, schema []string) (string, error) {
+func DiffPgSchema(ctx context.Context, source, target string, schema []string, _ ...func(*pgx.ConnConfig)) (string, error) {
 	dbSrc, err := sql.Open("pgx", source)
 	if err != nil {
 		return "", errors.Errorf("failed to open source database: %w", err)
@@ -22,12 +23,24 @@ func DiffPgSchema(ctx context.Context, source, target string, schema []string) (
 	}
 	defer dbDst.Close()
 	// Generate DDL based on schema plan
+	opts := []pgschema.PlanOpt{pgschema.WithDoNotValidatePlan()}
+	if len(schema) > 0 {
+		opts = append(opts, pgschema.WithIncludeSchemas(schema...))
+	} else {
+		opts = append(opts,
+			pgschema.WithExcludeSchemas(managedSchemas...),
+			pgschema.WithExcludeSchemas(
+				"topology", // unsupported due to views
+				"realtime", // unsupported due to partitioned table
+				"storage",  // unsupported due to unique index
+			),
+		)
+	}
 	plan, err := pgschema.Generate(
 		ctx,
 		pgschema.DBSchemaSource(dbSrc),
 		pgschema.DBSchemaSource(dbDst),
-		pgschema.WithDoNotValidatePlan(),
-		pgschema.WithIncludeSchemas(schema...),
+		opts...,
 	)
 	if err != nil {
 		return "", errors.Errorf("failed to generate plan: %w", err)

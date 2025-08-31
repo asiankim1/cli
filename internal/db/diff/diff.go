@@ -28,7 +28,7 @@ import (
 	"github.com/supabase/cli/pkg/parser"
 )
 
-type DiffFunc func(context.Context, string, string, []string) (string, error)
+type DiffFunc func(context.Context, string, string, []string, ...func(*pgx.ConnConfig)) (string, error)
 
 func Run(ctx context.Context, schema []string, file string, config pgconn.Config, differ DiffFunc, fsys afero.Fs, options ...func(*pgx.ConnConfig)) (err error) {
 	out, err := DiffDatabase(ctx, schema, config, os.Stderr, fsys, differ, options...)
@@ -89,16 +89,6 @@ func findDropStatements(out string) []string {
 	return drops
 }
 
-func loadSchema(ctx context.Context, config pgconn.Config, options ...func(*pgx.ConnConfig)) ([]string, error) {
-	conn, err := utils.ConnectByConfig(ctx, config, options...)
-	if err != nil {
-		return nil, err
-	}
-	defer conn.Close(context.Background())
-	// RLS policies in auth and storage schemas can be included with -s flag
-	return migration.ListUserSchemas(ctx, conn)
-}
-
 func CreateShadowDatabase(ctx context.Context, port uint16) (string, error) {
 	// Disable background workers in shadow database
 	config := start.NewContainerConfig("-c", "max_worker_processes=0")
@@ -146,7 +136,7 @@ func MigrateShadowDatabase(ctx context.Context, container string, fsys afero.Fs,
 	return migration.ApplyMigrations(ctx, migrations, conn, afero.NewIOFS(fsys))
 }
 
-func DiffDatabase(ctx context.Context, schema []string, config pgconn.Config, w io.Writer, fsys afero.Fs, differ func(context.Context, string, string, []string) (string, error), options ...func(*pgx.ConnConfig)) (string, error) {
+func DiffDatabase(ctx context.Context, schema []string, config pgconn.Config, w io.Writer, fsys afero.Fs, differ DiffFunc, options ...func(*pgx.ConnConfig)) (string, error) {
 	fmt.Fprintln(w, "Creating shadow database...")
 	shadow, err := CreateShadowDatabase(ctx, utils.Config.Db.ShadowPort)
 	if err != nil {
@@ -178,15 +168,14 @@ func DiffDatabase(ctx context.Context, schema []string, config pgconn.Config, w 
 		}
 	}
 	// Load all user defined schemas
-	if len(schema) == 0 {
-		if schema, err = loadSchema(ctx, config, options...); err != nil {
-			return "", err
-		}
+	if len(schema) > 0 {
+		fmt.Fprintln(w, "Diffing schemas:", strings.Join(schema, ","))
+	} else {
+		fmt.Fprintln(w, "Diffing schemas...")
 	}
-	fmt.Fprintln(w, "Diffing schemas:", strings.Join(schema, ","))
 	source := utils.ToPostgresURL(shadowConfig)
 	target := utils.ToPostgresURL(config)
-	return differ(ctx, source, target, schema)
+	return differ(ctx, source, target, schema, options...)
 }
 
 func migrateBaseDatabase(ctx context.Context, config pgconn.Config, migrations []string, fsys afero.Fs, options ...func(*pgx.ConnConfig)) error {

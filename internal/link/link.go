@@ -19,17 +19,11 @@ import (
 	"github.com/supabase/cli/pkg/api"
 	"github.com/supabase/cli/pkg/cast"
 	cliConfig "github.com/supabase/cli/pkg/config"
-	"github.com/supabase/cli/pkg/diff"
 	"github.com/supabase/cli/pkg/migration"
 )
 
 func Run(ctx context.Context, projectRef string, fsys afero.Fs, options ...func(*pgx.ConnConfig)) error {
-	copy := utils.Config.Clone()
-	original, err := cliConfig.ToTomlBytes(copy)
-	if err != nil {
-		fmt.Fprintln(utils.GetDebugLogger(), err)
-	}
-
+	majorVersion := utils.Config.Db.MajorVersion
 	if err := checkRemoteProjectStatus(ctx, projectRef, fsys); err != nil {
 		return err
 	}
@@ -39,7 +33,7 @@ func Run(ctx context.Context, projectRef string, fsys afero.Fs, options ...func(
 	if err != nil {
 		return err
 	}
-	LinkServices(ctx, projectRef, keys.Anon, fsys)
+	LinkServices(ctx, projectRef, keys.ServiceRole, fsys)
 
 	// 2. Check database connection
 	config := flags.NewDbConfigWithPassword(ctx, projectRef)
@@ -54,19 +48,17 @@ func Run(ctx context.Context, projectRef string, fsys afero.Fs, options ...func(
 	fmt.Fprintln(os.Stdout, "Finished "+utils.Aqua("supabase link")+".")
 
 	// 4. Suggest config update
-	updated, err := cliConfig.ToTomlBytes(utils.Config.Clone())
-	if err != nil {
-		fmt.Fprintln(utils.GetDebugLogger(), err)
-	}
-
-	if lineDiff := diff.Diff(utils.ConfigPath, original, projectRef, updated); len(lineDiff) > 0 {
-		fmt.Fprintln(os.Stderr, utils.Yellow("WARNING:"), "Local config differs from linked project. Try updating", utils.Bold(utils.ConfigPath))
-		fmt.Println(string(lineDiff))
+	if utils.Config.Db.MajorVersion != majorVersion {
+		fmt.Fprintln(os.Stderr, utils.Yellow("WARNING:"), "Local database version differs from the linked project.")
+		fmt.Fprintf(os.Stderr, `Update your %s to fix it:
+[db]
+major_version = %d
+`, utils.Bold(utils.ConfigPath), utils.Config.Db.MajorVersion)
 	}
 	return nil
 }
 
-func LinkServices(ctx context.Context, projectRef, anonKey string, fsys afero.Fs) {
+func LinkServices(ctx context.Context, projectRef, serviceKey string, fsys afero.Fs) {
 	// Ignore non-fatal errors linking services
 	var wg sync.WaitGroup
 	wg.Add(8)
@@ -106,7 +98,7 @@ func LinkServices(ctx context.Context, projectRef, anonKey string, fsys afero.Fs
 			fmt.Fprintln(os.Stderr, err)
 		}
 	}()
-	api := tenant.NewTenantAPI(ctx, projectRef, anonKey)
+	api := tenant.NewTenantAPI(ctx, projectRef, serviceKey)
 	go func() {
 		defer wg.Done()
 		if err := linkPostgrestVersion(ctx, api, fsys); err != nil && viper.GetBool("DEBUG") {

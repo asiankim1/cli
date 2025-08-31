@@ -410,41 +410,41 @@ const (
 
 // Defines values for ListProjectAddonsResponseSelectedAddonsVariantId0.
 const (
-	Ci12xlarge                ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_12xlarge"
-	Ci16xlarge                ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_16xlarge"
-	Ci24xlarge                ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_24xlarge"
-	Ci24xlargeHighMemory      ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_24xlarge_high_memory"
-	Ci24xlargeOptimizedCpu    ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_24xlarge_optimized_cpu"
-	Ci24xlargeOptimizedMemory ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_24xlarge_optimized_memory"
-	Ci2xlarge                 ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_2xlarge"
-	Ci48xlarge                ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_48xlarge"
-	Ci48xlargeHighMemory      ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_48xlarge_high_memory"
-	Ci48xlargeOptimizedCpu    ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_48xlarge_optimized_cpu"
-	Ci48xlargeOptimizedMemory ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_48xlarge_optimized_memory"
-	Ci4xlarge                 ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_4xlarge"
-	Ci8xlarge                 ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_8xlarge"
-	CiLarge                   ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_large"
-	CiMedium                  ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_medium"
-	CiMicro                   ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_micro"
-	CiSmall                   ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_small"
-	CiXlarge                  ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_xlarge"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci12xlarge                ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_12xlarge"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci16xlarge                ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_16xlarge"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci24xlarge                ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_24xlarge"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci24xlargeHighMemory      ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_24xlarge_high_memory"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci24xlargeOptimizedCpu    ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_24xlarge_optimized_cpu"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci24xlargeOptimizedMemory ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_24xlarge_optimized_memory"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci2xlarge                 ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_2xlarge"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci48xlarge                ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_48xlarge"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci48xlargeHighMemory      ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_48xlarge_high_memory"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci48xlargeOptimizedCpu    ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_48xlarge_optimized_cpu"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci48xlargeOptimizedMemory ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_48xlarge_optimized_memory"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci4xlarge                 ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_4xlarge"
+	ListProjectAddonsResponseSelectedAddonsVariantId0Ci8xlarge                 ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_8xlarge"
+	ListProjectAddonsResponseSelectedAddonsVariantId0CiLarge                   ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_large"
+	ListProjectAddonsResponseSelectedAddonsVariantId0CiMedium                  ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_medium"
+	ListProjectAddonsResponseSelectedAddonsVariantId0CiMicro                   ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_micro"
+	ListProjectAddonsResponseSelectedAddonsVariantId0CiSmall                   ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_small"
+	ListProjectAddonsResponseSelectedAddonsVariantId0CiXlarge                  ListProjectAddonsResponseSelectedAddonsVariantId0 = "ci_xlarge"
 )
 
 // Defines values for ListProjectAddonsResponseSelectedAddonsVariantId1.
 const (
-	CdDefault ListProjectAddonsResponseSelectedAddonsVariantId1 = "cd_default"
+	ListProjectAddonsResponseSelectedAddonsVariantId1CdDefault ListProjectAddonsResponseSelectedAddonsVariantId1 = "cd_default"
 )
 
 // Defines values for ListProjectAddonsResponseSelectedAddonsVariantId2.
 const (
-	Pitr14 ListProjectAddonsResponseSelectedAddonsVariantId2 = "pitr_14"
-	Pitr28 ListProjectAddonsResponseSelectedAddonsVariantId2 = "pitr_28"
-	Pitr7  ListProjectAddonsResponseSelectedAddonsVariantId2 = "pitr_7"
+	ListProjectAddonsResponseSelectedAddonsVariantId2Pitr14 ListProjectAddonsResponseSelectedAddonsVariantId2 = "pitr_14"
+	ListProjectAddonsResponseSelectedAddonsVariantId2Pitr28 ListProjectAddonsResponseSelectedAddonsVariantId2 = "pitr_28"
+	ListProjectAddonsResponseSelectedAddonsVariantId2Pitr7  ListProjectAddonsResponseSelectedAddonsVariantId2 = "pitr_7"
 )
 
 // Defines values for ListProjectAddonsResponseSelectedAddonsVariantId3.
 const (
-	Ipv4Default ListProjectAddonsResponseSelectedAddonsVariantId3 = "ipv4_default"
+	ListProjectAddonsResponseSelectedAddonsVariantId3Ipv4Default ListProjectAddonsResponseSelectedAddonsVariantId3 = "ipv4_default"
 )
 
 // Defines values for ListProjectAddonsResponseSelectedAddonsVariantId4.
@@ -537,6 +537,8 @@ const (
 
 // Defines values for ProjectUpgradeEligibilityResponseTargetUpgradeVersionsPostgresVersion.
 const (
+	N13       ProjectUpgradeEligibilityResponseTargetUpgradeVersionsPostgresVersion = "13"
+	N14       ProjectUpgradeEligibilityResponseTargetUpgradeVersionsPostgresVersion = "14"
 	N15       ProjectUpgradeEligibilityResponseTargetUpgradeVersionsPostgresVersion = "15"
 	N17       ProjectUpgradeEligibilityResponseTargetUpgradeVersionsPostgresVersion = "17"
 	N17Oriole ProjectUpgradeEligibilityResponseTargetUpgradeVersionsPostgresVersion = "17-oriole"
@@ -632,6 +634,12 @@ const (
 	SnippetResponseVisibilityUser    SnippetResponseVisibility = "user"
 )
 
+// Defines values for StorageConfigResponseExternalUpstreamTarget.
+const (
+	StorageConfigResponseExternalUpstreamTargetCanary StorageConfigResponseExternalUpstreamTarget = "canary"
+	StorageConfigResponseExternalUpstreamTargetMain   StorageConfigResponseExternalUpstreamTarget = "main"
+)
+
 // Defines values for SupavisorConfigResponseDatabaseType.
 const (
 	PRIMARY     SupavisorConfigResponseDatabaseType = "PRIMARY"
@@ -699,6 +707,12 @@ const (
 	UpdateSigningKeyBodyStatusPreviouslyUsed UpdateSigningKeyBodyStatus = "previously_used"
 	UpdateSigningKeyBodyStatusRevoked        UpdateSigningKeyBodyStatus = "revoked"
 	UpdateSigningKeyBodyStatusStandby        UpdateSigningKeyBodyStatus = "standby"
+)
+
+// Defines values for UpdateStorageConfigBodyExternalUpstreamTarget.
+const (
+	UpdateStorageConfigBodyExternalUpstreamTargetCanary UpdateStorageConfigBodyExternalUpstreamTarget = "canary"
+	UpdateStorageConfigBodyExternalUpstreamTargetMain   UpdateStorageConfigBodyExternalUpstreamTarget = "main"
 )
 
 // Defines values for UpdateSupavisorConfigBodyPoolMode.
@@ -923,12 +937,14 @@ const (
 
 // Defines values for V1ServiceHealthResponseName.
 const (
-	V1ServiceHealthResponseNameAuth     V1ServiceHealthResponseName = "auth"
-	V1ServiceHealthResponseNameDb       V1ServiceHealthResponseName = "db"
-	V1ServiceHealthResponseNamePooler   V1ServiceHealthResponseName = "pooler"
-	V1ServiceHealthResponseNameRealtime V1ServiceHealthResponseName = "realtime"
-	V1ServiceHealthResponseNameRest     V1ServiceHealthResponseName = "rest"
-	V1ServiceHealthResponseNameStorage  V1ServiceHealthResponseName = "storage"
+	V1ServiceHealthResponseNameAuth           V1ServiceHealthResponseName = "auth"
+	V1ServiceHealthResponseNameDb             V1ServiceHealthResponseName = "db"
+	V1ServiceHealthResponseNameDbPostgresUser V1ServiceHealthResponseName = "db_postgres_user"
+	V1ServiceHealthResponseNamePgBouncer      V1ServiceHealthResponseName = "pg_bouncer"
+	V1ServiceHealthResponseNamePooler         V1ServiceHealthResponseName = "pooler"
+	V1ServiceHealthResponseNameRealtime       V1ServiceHealthResponseName = "realtime"
+	V1ServiceHealthResponseNameRest           V1ServiceHealthResponseName = "rest"
+	V1ServiceHealthResponseNameStorage        V1ServiceHealthResponseName = "storage"
 )
 
 // Defines values for V1ServiceHealthResponseStatus.
@@ -983,25 +999,74 @@ const (
 	Sql V1GetSecurityAdvisorsParamsLintType = "sql"
 )
 
+// Defines values for V1GetProjectFunctionCombinedStatsParamsInterval.
+const (
+	V1GetProjectFunctionCombinedStatsParamsIntervalN15min V1GetProjectFunctionCombinedStatsParamsInterval = "15min"
+	V1GetProjectFunctionCombinedStatsParamsIntervalN1day  V1GetProjectFunctionCombinedStatsParamsInterval = "1day"
+	V1GetProjectFunctionCombinedStatsParamsIntervalN1hr   V1GetProjectFunctionCombinedStatsParamsInterval = "1hr"
+	V1GetProjectFunctionCombinedStatsParamsIntervalN3hr   V1GetProjectFunctionCombinedStatsParamsInterval = "3hr"
+)
+
 // Defines values for V1GetProjectUsageApiCountParamsInterval.
 const (
-	N15min V1GetProjectUsageApiCountParamsInterval = "15min"
-	N1day  V1GetProjectUsageApiCountParamsInterval = "1day"
-	N1hr   V1GetProjectUsageApiCountParamsInterval = "1hr"
-	N30min V1GetProjectUsageApiCountParamsInterval = "30min"
-	N3day  V1GetProjectUsageApiCountParamsInterval = "3day"
-	N3hr   V1GetProjectUsageApiCountParamsInterval = "3hr"
-	N7day  V1GetProjectUsageApiCountParamsInterval = "7day"
+	V1GetProjectUsageApiCountParamsIntervalN15min V1GetProjectUsageApiCountParamsInterval = "15min"
+	V1GetProjectUsageApiCountParamsIntervalN1day  V1GetProjectUsageApiCountParamsInterval = "1day"
+	V1GetProjectUsageApiCountParamsIntervalN1hr   V1GetProjectUsageApiCountParamsInterval = "1hr"
+	V1GetProjectUsageApiCountParamsIntervalN30min V1GetProjectUsageApiCountParamsInterval = "30min"
+	V1GetProjectUsageApiCountParamsIntervalN3day  V1GetProjectUsageApiCountParamsInterval = "3day"
+	V1GetProjectUsageApiCountParamsIntervalN3hr   V1GetProjectUsageApiCountParamsInterval = "3hr"
+	V1GetProjectUsageApiCountParamsIntervalN7day  V1GetProjectUsageApiCountParamsInterval = "7day"
+)
+
+// Defines values for V1RemoveProjectAddonParamsAddonVariant0.
+const (
+	V1RemoveProjectAddonParamsAddonVariant0Ci12xlarge                V1RemoveProjectAddonParamsAddonVariant0 = "ci_12xlarge"
+	V1RemoveProjectAddonParamsAddonVariant0Ci16xlarge                V1RemoveProjectAddonParamsAddonVariant0 = "ci_16xlarge"
+	V1RemoveProjectAddonParamsAddonVariant0Ci24xlarge                V1RemoveProjectAddonParamsAddonVariant0 = "ci_24xlarge"
+	V1RemoveProjectAddonParamsAddonVariant0Ci24xlargeHighMemory      V1RemoveProjectAddonParamsAddonVariant0 = "ci_24xlarge_high_memory"
+	V1RemoveProjectAddonParamsAddonVariant0Ci24xlargeOptimizedCpu    V1RemoveProjectAddonParamsAddonVariant0 = "ci_24xlarge_optimized_cpu"
+	V1RemoveProjectAddonParamsAddonVariant0Ci24xlargeOptimizedMemory V1RemoveProjectAddonParamsAddonVariant0 = "ci_24xlarge_optimized_memory"
+	V1RemoveProjectAddonParamsAddonVariant0Ci2xlarge                 V1RemoveProjectAddonParamsAddonVariant0 = "ci_2xlarge"
+	V1RemoveProjectAddonParamsAddonVariant0Ci48xlarge                V1RemoveProjectAddonParamsAddonVariant0 = "ci_48xlarge"
+	V1RemoveProjectAddonParamsAddonVariant0Ci48xlargeHighMemory      V1RemoveProjectAddonParamsAddonVariant0 = "ci_48xlarge_high_memory"
+	V1RemoveProjectAddonParamsAddonVariant0Ci48xlargeOptimizedCpu    V1RemoveProjectAddonParamsAddonVariant0 = "ci_48xlarge_optimized_cpu"
+	V1RemoveProjectAddonParamsAddonVariant0Ci48xlargeOptimizedMemory V1RemoveProjectAddonParamsAddonVariant0 = "ci_48xlarge_optimized_memory"
+	V1RemoveProjectAddonParamsAddonVariant0Ci4xlarge                 V1RemoveProjectAddonParamsAddonVariant0 = "ci_4xlarge"
+	V1RemoveProjectAddonParamsAddonVariant0Ci8xlarge                 V1RemoveProjectAddonParamsAddonVariant0 = "ci_8xlarge"
+	V1RemoveProjectAddonParamsAddonVariant0CiLarge                   V1RemoveProjectAddonParamsAddonVariant0 = "ci_large"
+	V1RemoveProjectAddonParamsAddonVariant0CiMedium                  V1RemoveProjectAddonParamsAddonVariant0 = "ci_medium"
+	V1RemoveProjectAddonParamsAddonVariant0CiMicro                   V1RemoveProjectAddonParamsAddonVariant0 = "ci_micro"
+	V1RemoveProjectAddonParamsAddonVariant0CiSmall                   V1RemoveProjectAddonParamsAddonVariant0 = "ci_small"
+	V1RemoveProjectAddonParamsAddonVariant0CiXlarge                  V1RemoveProjectAddonParamsAddonVariant0 = "ci_xlarge"
+)
+
+// Defines values for V1RemoveProjectAddonParamsAddonVariant1.
+const (
+	V1RemoveProjectAddonParamsAddonVariant1CdDefault V1RemoveProjectAddonParamsAddonVariant1 = "cd_default"
+)
+
+// Defines values for V1RemoveProjectAddonParamsAddonVariant2.
+const (
+	V1RemoveProjectAddonParamsAddonVariant2Pitr14 V1RemoveProjectAddonParamsAddonVariant2 = "pitr_14"
+	V1RemoveProjectAddonParamsAddonVariant2Pitr28 V1RemoveProjectAddonParamsAddonVariant2 = "pitr_28"
+	V1RemoveProjectAddonParamsAddonVariant2Pitr7  V1RemoveProjectAddonParamsAddonVariant2 = "pitr_7"
+)
+
+// Defines values for V1RemoveProjectAddonParamsAddonVariant3.
+const (
+	V1RemoveProjectAddonParamsAddonVariant3Ipv4Default V1RemoveProjectAddonParamsAddonVariant3 = "ipv4_default"
 )
 
 // Defines values for V1GetServicesHealthParamsServices.
 const (
-	Auth     V1GetServicesHealthParamsServices = "auth"
-	Db       V1GetServicesHealthParamsServices = "db"
-	Pooler   V1GetServicesHealthParamsServices = "pooler"
-	Realtime V1GetServicesHealthParamsServices = "realtime"
-	Rest     V1GetServicesHealthParamsServices = "rest"
-	Storage  V1GetServicesHealthParamsServices = "storage"
+	Auth           V1GetServicesHealthParamsServices = "auth"
+	Db             V1GetServicesHealthParamsServices = "db"
+	DbPostgresUser V1GetServicesHealthParamsServices = "db_postgres_user"
+	PgBouncer      V1GetServicesHealthParamsServices = "pg_bouncer"
+	Pooler         V1GetServicesHealthParamsServices = "pooler"
+	Realtime       V1GetServicesHealthParamsServices = "realtime"
+	Rest           V1GetServicesHealthParamsServices = "rest"
+	Storage        V1GetServicesHealthParamsServices = "storage"
 )
 
 // Defines values for V1ListAllSnippetsParamsSortBy.
@@ -1160,6 +1225,7 @@ type AuthConfigResponse struct {
 	ExternalTwitterClientId                       nullable.Nullable[string]                                       `json:"external_twitter_client_id"`
 	ExternalTwitterEnabled                        nullable.Nullable[bool]                                         `json:"external_twitter_enabled"`
 	ExternalTwitterSecret                         nullable.Nullable[string]                                       `json:"external_twitter_secret"`
+	ExternalWeb3EthereumEnabled                   nullable.Nullable[bool]                                         `json:"external_web3_ethereum_enabled"`
 	ExternalWeb3SolanaEnabled                     nullable.Nullable[bool]                                         `json:"external_web3_solana_enabled"`
 	ExternalWorkosClientId                        nullable.Nullable[string]                                       `json:"external_workos_client_id"`
 	ExternalWorkosEnabled                         nullable.Nullable[bool]                                         `json:"external_workos_enabled"`
@@ -1214,6 +1280,8 @@ type AuthConfigResponse struct {
 	MfaTotpVerifyEnabled                          nullable.Nullable[bool]                                         `json:"mfa_totp_verify_enabled"`
 	MfaWebAuthnEnrollEnabled                      nullable.Nullable[bool]                                         `json:"mfa_web_authn_enroll_enabled"`
 	MfaWebAuthnVerifyEnabled                      nullable.Nullable[bool]                                         `json:"mfa_web_authn_verify_enabled"`
+	NimbusOauthClientId                           nullable.Nullable[string]                                       `json:"nimbus_oauth_client_id"`
+	NimbusOauthClientSecret                       nullable.Nullable[string]                                       `json:"nimbus_oauth_client_secret"`
 	PasswordHibpEnabled                           nullable.Nullable[bool]                                         `json:"password_hibp_enabled"`
 	PasswordMinLength                             nullable.Nullable[int]                                          `json:"password_min_length"`
 	PasswordRequiredCharacters                    nullable.Nullable[AuthConfigResponsePasswordRequiredCharacters] `json:"password_required_characters"`
@@ -1280,6 +1348,12 @@ type AuthConfigResponseSecurityCaptchaProvider string
 // AuthConfigResponseSmsProvider defines model for AuthConfigResponse.SmsProvider.
 type AuthConfigResponseSmsProvider string
 
+// AuthorizeJitAccessBody defines model for AuthorizeJitAccessBody.
+type AuthorizeJitAccessBody struct {
+	Rhost string `json:"rhost"`
+	Role  string `json:"role"`
+}
+
 // BranchActionBody defines model for BranchActionBody.
 type BranchActionBody struct {
 	MigrationVersion *string `json:"migration_version,omitempty"`
@@ -1328,6 +1402,7 @@ type BranchResponse struct {
 	ReviewRequestedAt *time.Time           `json:"review_requested_at,omitempty"`
 	Status            BranchResponseStatus `json:"status"`
 	UpdatedAt         time.Time            `json:"updated_at"`
+	WithData          bool                 `json:"with_data"`
 }
 
 // BranchResponseStatus defines model for BranchResponse.Status.
@@ -1742,6 +1817,59 @@ type GetProviderResponse struct {
 		MetadataXml *string `json:"metadata_xml,omitempty"`
 	} `json:"saml,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
+}
+
+// JitAccessResponse defines model for JitAccessResponse.
+type JitAccessResponse struct {
+	UserId    openapi_types.UUID `json:"user_id"`
+	UserRoles []struct {
+		AllowedNetworks *struct {
+			AllowedCidrs *[]struct {
+				Cidr string `json:"cidr"`
+			} `json:"allowed_cidrs,omitempty"`
+			AllowedCidrsV6 *[]struct {
+				Cidr string `json:"cidr"`
+			} `json:"allowed_cidrs_v6,omitempty"`
+		} `json:"allowed_networks,omitempty"`
+		ExpiresAt *float32 `json:"expires_at,omitempty"`
+		Role      string   `json:"role"`
+	} `json:"user_roles"`
+}
+
+// JitAuthorizeAccessResponse defines model for JitAuthorizeAccessResponse.
+type JitAuthorizeAccessResponse struct {
+	UserId   openapi_types.UUID `json:"user_id"`
+	UserRole struct {
+		AllowedNetworks *struct {
+			AllowedCidrs *[]struct {
+				Cidr string `json:"cidr"`
+			} `json:"allowed_cidrs,omitempty"`
+			AllowedCidrsV6 *[]struct {
+				Cidr string `json:"cidr"`
+			} `json:"allowed_cidrs_v6,omitempty"`
+		} `json:"allowed_networks,omitempty"`
+		ExpiresAt *float32 `json:"expires_at,omitempty"`
+		Role      string   `json:"role"`
+	} `json:"user_role"`
+}
+
+// JitListAccessResponse defines model for JitListAccessResponse.
+type JitListAccessResponse struct {
+	Items []struct {
+		UserId    openapi_types.UUID `json:"user_id"`
+		UserRoles []struct {
+			AllowedNetworks *struct {
+				AllowedCidrs *[]struct {
+					Cidr string `json:"cidr"`
+				} `json:"allowed_cidrs,omitempty"`
+				AllowedCidrsV6 *[]struct {
+					Cidr string `json:"cidr"`
+				} `json:"allowed_cidrs_v6,omitempty"`
+			} `json:"allowed_networks,omitempty"`
+			ExpiresAt *float32 `json:"expires_at,omitempty"`
+			Role      string   `json:"role"`
+		} `json:"user_roles"`
+	} `json:"items"`
 }
 
 // LegacyApiKeysResponse defines model for LegacyApiKeysResponse.
@@ -2249,6 +2377,13 @@ type SslEnforcementResponse struct {
 
 // StorageConfigResponse defines model for StorageConfigResponse.
 type StorageConfigResponse struct {
+	Capabilities struct {
+		IcebergCatalog bool `json:"iceberg_catalog"`
+		ListV2         bool `json:"list_v2"`
+	} `json:"capabilities"`
+	External struct {
+		UpstreamTarget StorageConfigResponseExternalUpstreamTarget `json:"upstreamTarget"`
+	} `json:"external"`
 	Features struct {
 		IcebergCatalog *struct {
 			Enabled bool `json:"enabled"`
@@ -2262,6 +2397,9 @@ type StorageConfigResponse struct {
 	} `json:"features"`
 	FileSizeLimit int64 `json:"fileSizeLimit"`
 }
+
+// StorageConfigResponseExternalUpstreamTarget defines model for StorageConfigResponse.External.UpstreamTarget.
+type StorageConfigResponseExternalUpstreamTarget string
 
 // StreamableFile defines model for StreamableFile.
 type StreamableFile = map[string]interface{}
@@ -2385,6 +2523,7 @@ type UpdateAuthConfigBody struct {
 	ExternalTwitterClientId                       nullable.Nullable[string]                                         `json:"external_twitter_client_id,omitempty"`
 	ExternalTwitterEnabled                        nullable.Nullable[bool]                                           `json:"external_twitter_enabled,omitempty"`
 	ExternalTwitterSecret                         nullable.Nullable[string]                                         `json:"external_twitter_secret,omitempty"`
+	ExternalWeb3EthereumEnabled                   nullable.Nullable[bool]                                           `json:"external_web3_ethereum_enabled,omitempty"`
 	ExternalWeb3SolanaEnabled                     nullable.Nullable[bool]                                           `json:"external_web3_solana_enabled,omitempty"`
 	ExternalWorkosClientId                        nullable.Nullable[string]                                         `json:"external_workos_client_id,omitempty"`
 	ExternalWorkosEnabled                         nullable.Nullable[bool]                                           `json:"external_workos_enabled,omitempty"`
@@ -2439,6 +2578,8 @@ type UpdateAuthConfigBody struct {
 	MfaTotpVerifyEnabled                          nullable.Nullable[bool]                                           `json:"mfa_totp_verify_enabled,omitempty"`
 	MfaWebAuthnEnrollEnabled                      nullable.Nullable[bool]                                           `json:"mfa_web_authn_enroll_enabled,omitempty"`
 	MfaWebAuthnVerifyEnabled                      nullable.Nullable[bool]                                           `json:"mfa_web_authn_verify_enabled,omitempty"`
+	NimbusOauthClientId                           nullable.Nullable[string]                                         `json:"nimbus_oauth_client_id,omitempty"`
+	NimbusOauthClientSecret                       nullable.Nullable[string]                                         `json:"nimbus_oauth_client_secret,omitempty"`
 	PasswordHibpEnabled                           nullable.Nullable[bool]                                           `json:"password_hibp_enabled,omitempty"`
 	PasswordMinLength                             nullable.Nullable[int]                                            `json:"password_min_length,omitempty"`
 	PasswordRequiredCharacters                    nullable.Nullable[UpdateAuthConfigBodyPasswordRequiredCharacters] `json:"password_required_characters,omitempty"`
@@ -2561,6 +2702,23 @@ type UpdateCustomHostnameResponse struct {
 // UpdateCustomHostnameResponseStatus defines model for UpdateCustomHostnameResponse.Status.
 type UpdateCustomHostnameResponseStatus string
 
+// UpdateJitAccessBody defines model for UpdateJitAccessBody.
+type UpdateJitAccessBody struct {
+	Roles []struct {
+		AllowedNetworks *struct {
+			AllowedCidrs *[]struct {
+				Cidr string `json:"cidr"`
+			} `json:"allowed_cidrs,omitempty"`
+			AllowedCidrsV6 *[]struct {
+				Cidr string `json:"cidr"`
+			} `json:"allowed_cidrs_v6,omitempty"`
+		} `json:"allowed_networks,omitempty"`
+		ExpiresAt *float32 `json:"expires_at,omitempty"`
+		Role      string   `json:"role"`
+	} `json:"roles"`
+	UserId openapi_types.UUID `json:"user_id"`
+}
+
 // UpdatePgsodiumConfigBody defines model for UpdatePgsodiumConfigBody.
 type UpdatePgsodiumConfigBody struct {
 	RootKey string `json:"root_key"`
@@ -2649,6 +2807,9 @@ type UpdateSigningKeyBodyStatus string
 
 // UpdateStorageConfigBody defines model for UpdateStorageConfigBody.
 type UpdateStorageConfigBody struct {
+	External *struct {
+		UpstreamTarget UpdateStorageConfigBodyExternalUpstreamTarget `json:"upstreamTarget"`
+	} `json:"external,omitempty"`
 	Features *struct {
 		IcebergCatalog *struct {
 			Enabled bool `json:"enabled"`
@@ -2662,6 +2823,9 @@ type UpdateStorageConfigBody struct {
 	} `json:"features,omitempty"`
 	FileSizeLimit *int64 `json:"fileSizeLimit,omitempty"`
 }
+
+// UpdateStorageConfigBodyExternalUpstreamTarget defines model for UpdateStorageConfigBody.External.UpstreamTarget.
+type UpdateStorageConfigBodyExternalUpstreamTarget string
 
 // UpdateSupavisorConfigBody defines model for UpdateSupavisorConfigBody.
 type UpdateSupavisorConfigBody struct {
@@ -2757,6 +2921,70 @@ type V1CreateProjectBodyPlan string
 
 // V1CreateProjectBodyRegion Region you want your server to reside in
 type V1CreateProjectBodyRegion string
+
+// V1GetUsageApiCountResponse defines model for V1GetUsageApiCountResponse.
+type V1GetUsageApiCountResponse struct {
+	Error  *V1GetUsageApiCountResponse_Error `json:"error,omitempty"`
+	Result *[]struct {
+		Timestamp             time.Time `json:"timestamp"`
+		TotalAuthRequests     float32   `json:"total_auth_requests"`
+		TotalRealtimeRequests float32   `json:"total_realtime_requests"`
+		TotalRestRequests     float32   `json:"total_rest_requests"`
+		TotalStorageRequests  float32   `json:"total_storage_requests"`
+	} `json:"result,omitempty"`
+}
+
+// V1GetUsageApiCountResponseError0 defines model for .
+type V1GetUsageApiCountResponseError0 = string
+
+// V1GetUsageApiCountResponseError1 defines model for .
+type V1GetUsageApiCountResponseError1 struct {
+	Code   float32 `json:"code"`
+	Errors []struct {
+		Domain       string `json:"domain"`
+		Location     string `json:"location"`
+		LocationType string `json:"locationType"`
+		Message      string `json:"message"`
+		Reason       string `json:"reason"`
+	} `json:"errors"`
+	Message string `json:"message"`
+	Status  string `json:"status"`
+}
+
+// V1GetUsageApiCountResponse_Error defines model for V1GetUsageApiCountResponse.Error.
+type V1GetUsageApiCountResponse_Error struct {
+	union json.RawMessage
+}
+
+// V1GetUsageApiRequestsCountResponse defines model for V1GetUsageApiRequestsCountResponse.
+type V1GetUsageApiRequestsCountResponse struct {
+	Error  *V1GetUsageApiRequestsCountResponse_Error `json:"error,omitempty"`
+	Result *[]struct {
+		Count float32 `json:"count"`
+	} `json:"result,omitempty"`
+}
+
+// V1GetUsageApiRequestsCountResponseError0 defines model for .
+type V1GetUsageApiRequestsCountResponseError0 = string
+
+// V1GetUsageApiRequestsCountResponseError1 defines model for .
+type V1GetUsageApiRequestsCountResponseError1 struct {
+	Code   float32 `json:"code"`
+	Errors []struct {
+		Domain       string `json:"domain"`
+		Location     string `json:"location"`
+		LocationType string `json:"locationType"`
+		Message      string `json:"message"`
+		Reason       string `json:"reason"`
+	} `json:"errors"`
+	Message string `json:"message"`
+	Status  string `json:"status"`
+}
+
+// V1GetUsageApiRequestsCountResponse_Error defines model for V1GetUsageApiRequestsCountResponse.Error.
+type V1GetUsageApiRequestsCountResponse_Error struct {
+	union json.RawMessage
+}
 
 // V1ListMigrationsResponse defines model for V1ListMigrationsResponse.
 type V1ListMigrationsResponse = []struct {
@@ -3090,6 +3318,15 @@ type V1GetSecurityAdvisorsParams struct {
 // V1GetSecurityAdvisorsParamsLintType defines parameters for V1GetSecurityAdvisors.
 type V1GetSecurityAdvisorsParamsLintType string
 
+// V1GetProjectFunctionCombinedStatsParams defines parameters for V1GetProjectFunctionCombinedStats.
+type V1GetProjectFunctionCombinedStatsParams struct {
+	Interval   V1GetProjectFunctionCombinedStatsParamsInterval `form:"interval" json:"interval"`
+	FunctionId string                                          `form:"function_id" json:"function_id"`
+}
+
+// V1GetProjectFunctionCombinedStatsParamsInterval defines parameters for V1GetProjectFunctionCombinedStats.
+type V1GetProjectFunctionCombinedStatsParamsInterval string
+
 // V1GetProjectLogsParams defines parameters for V1GetProjectLogs.
 type V1GetProjectLogsParams struct {
 	Sql               *string    `form:"sql,omitempty" json:"sql,omitempty"`
@@ -3144,6 +3381,18 @@ type V1UpdateProjectApiKeyParams struct {
 	// Reveal Boolean string, true or false
 	Reveal *bool `form:"reveal,omitempty" json:"reveal,omitempty"`
 }
+
+// V1RemoveProjectAddonParamsAddonVariant0 defines parameters for V1RemoveProjectAddon.
+type V1RemoveProjectAddonParamsAddonVariant0 string
+
+// V1RemoveProjectAddonParamsAddonVariant1 defines parameters for V1RemoveProjectAddon.
+type V1RemoveProjectAddonParamsAddonVariant1 string
+
+// V1RemoveProjectAddonParamsAddonVariant2 defines parameters for V1RemoveProjectAddon.
+type V1RemoveProjectAddonParamsAddonVariant2 string
+
+// V1RemoveProjectAddonParamsAddonVariant3 defines parameters for V1RemoveProjectAddon.
+type V1RemoveProjectAddonParamsAddonVariant3 string
 
 // V1GetRestorePointParams defines parameters for V1GetRestorePoint.
 type V1GetRestorePointParams struct {
@@ -3312,6 +3561,12 @@ type V1CreateRestorePointJSONRequestBody = V1RestorePointPostBody
 
 // V1UndoJSONRequestBody defines body for V1Undo for application/json ContentType.
 type V1UndoJSONRequestBody = V1UndoBody
+
+// V1AuthorizeJitAccessJSONRequestBody defines body for V1AuthorizeJitAccess for application/json ContentType.
+type V1AuthorizeJitAccessJSONRequestBody = AuthorizeJitAccessBody
+
+// V1UpdateJitAccessJSONRequestBody defines body for V1UpdateJitAccess for application/json ContentType.
+type V1UpdateJitAccessJSONRequestBody = UpdateJitAccessBody
 
 // V1ApplyAMigrationJSONRequestBody defines body for V1ApplyAMigration for application/json ContentType.
 type V1ApplyAMigrationJSONRequestBody = V1CreateMigrationBody
@@ -4185,6 +4440,130 @@ func (t ListProjectAddonsResponse_SelectedAddons_Variant_Id) MarshalJSON() ([]by
 }
 
 func (t *ListProjectAddonsResponse_SelectedAddons_Variant_Id) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsV1GetUsageApiCountResponseError0 returns the union data inside the V1GetUsageApiCountResponse_Error as a V1GetUsageApiCountResponseError0
+func (t V1GetUsageApiCountResponse_Error) AsV1GetUsageApiCountResponseError0() (V1GetUsageApiCountResponseError0, error) {
+	var body V1GetUsageApiCountResponseError0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromV1GetUsageApiCountResponseError0 overwrites any union data inside the V1GetUsageApiCountResponse_Error as the provided V1GetUsageApiCountResponseError0
+func (t *V1GetUsageApiCountResponse_Error) FromV1GetUsageApiCountResponseError0(v V1GetUsageApiCountResponseError0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeV1GetUsageApiCountResponseError0 performs a merge with any union data inside the V1GetUsageApiCountResponse_Error, using the provided V1GetUsageApiCountResponseError0
+func (t *V1GetUsageApiCountResponse_Error) MergeV1GetUsageApiCountResponseError0(v V1GetUsageApiCountResponseError0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsV1GetUsageApiCountResponseError1 returns the union data inside the V1GetUsageApiCountResponse_Error as a V1GetUsageApiCountResponseError1
+func (t V1GetUsageApiCountResponse_Error) AsV1GetUsageApiCountResponseError1() (V1GetUsageApiCountResponseError1, error) {
+	var body V1GetUsageApiCountResponseError1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromV1GetUsageApiCountResponseError1 overwrites any union data inside the V1GetUsageApiCountResponse_Error as the provided V1GetUsageApiCountResponseError1
+func (t *V1GetUsageApiCountResponse_Error) FromV1GetUsageApiCountResponseError1(v V1GetUsageApiCountResponseError1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeV1GetUsageApiCountResponseError1 performs a merge with any union data inside the V1GetUsageApiCountResponse_Error, using the provided V1GetUsageApiCountResponseError1
+func (t *V1GetUsageApiCountResponse_Error) MergeV1GetUsageApiCountResponseError1(v V1GetUsageApiCountResponseError1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t V1GetUsageApiCountResponse_Error) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *V1GetUsageApiCountResponse_Error) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsV1GetUsageApiRequestsCountResponseError0 returns the union data inside the V1GetUsageApiRequestsCountResponse_Error as a V1GetUsageApiRequestsCountResponseError0
+func (t V1GetUsageApiRequestsCountResponse_Error) AsV1GetUsageApiRequestsCountResponseError0() (V1GetUsageApiRequestsCountResponseError0, error) {
+	var body V1GetUsageApiRequestsCountResponseError0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromV1GetUsageApiRequestsCountResponseError0 overwrites any union data inside the V1GetUsageApiRequestsCountResponse_Error as the provided V1GetUsageApiRequestsCountResponseError0
+func (t *V1GetUsageApiRequestsCountResponse_Error) FromV1GetUsageApiRequestsCountResponseError0(v V1GetUsageApiRequestsCountResponseError0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeV1GetUsageApiRequestsCountResponseError0 performs a merge with any union data inside the V1GetUsageApiRequestsCountResponse_Error, using the provided V1GetUsageApiRequestsCountResponseError0
+func (t *V1GetUsageApiRequestsCountResponse_Error) MergeV1GetUsageApiRequestsCountResponseError0(v V1GetUsageApiRequestsCountResponseError0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsV1GetUsageApiRequestsCountResponseError1 returns the union data inside the V1GetUsageApiRequestsCountResponse_Error as a V1GetUsageApiRequestsCountResponseError1
+func (t V1GetUsageApiRequestsCountResponse_Error) AsV1GetUsageApiRequestsCountResponseError1() (V1GetUsageApiRequestsCountResponseError1, error) {
+	var body V1GetUsageApiRequestsCountResponseError1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromV1GetUsageApiRequestsCountResponseError1 overwrites any union data inside the V1GetUsageApiRequestsCountResponse_Error as the provided V1GetUsageApiRequestsCountResponseError1
+func (t *V1GetUsageApiRequestsCountResponse_Error) FromV1GetUsageApiRequestsCountResponseError1(v V1GetUsageApiRequestsCountResponseError1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeV1GetUsageApiRequestsCountResponseError1 performs a merge with any union data inside the V1GetUsageApiRequestsCountResponse_Error, using the provided V1GetUsageApiRequestsCountResponseError1
+func (t *V1GetUsageApiRequestsCountResponse_Error) MergeV1GetUsageApiRequestsCountResponseError1(v V1GetUsageApiRequestsCountResponseError1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t V1GetUsageApiRequestsCountResponse_Error) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *V1GetUsageApiRequestsCountResponse_Error) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
